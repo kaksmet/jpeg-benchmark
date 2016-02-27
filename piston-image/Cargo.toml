@@ -1,0 +1,15 @@
+[package]
+name = "piston-image-benchmark"
+version = "0.0.1"
+license = "MIT"
+description = "piston image JPEG decoder benchmark"
+authors = ["Ulf Nilsson"]
+
+[[bin]]
+name = "piston-image"
+path = "main.rs"
+
+[dependencies.image]
+version = "=0.6.1"
+default-features = false
+features = ["jpeg"]

@@ -1,0 +1,13 @@
+[package]
+name = "jpeg-decoder-benchmark"
+version = "0.0.1"
+license = "MIT"
+description = "jpeg-decoder benchmark"
+authors = ["Ulf Nilsson"]
+
+[[bin]]
+name = "jpeg-decoder"
+path = "main.rs"
+
+[dependencies]
+jpeg-decoder = "0.1"
