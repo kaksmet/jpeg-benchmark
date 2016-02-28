@@ -2,7 +2,7 @@
 name = "jpeg-decoder-benchmark"
 version = "0.0.1"
 dependencies = [
- "jpeg-decoder 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jpeg-decoder 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -30,13 +30,13 @@ dependencies = [
 
 [[package]]
 name = "jpeg-decoder"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "byteorder 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "num 0.1.31 (registry+https://github.com/rust-lang/crates.io-index)",
- "rayon 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rayon 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -75,7 +75,7 @@ dependencies = [
 
 [[package]]
 name = "rayon"
-version = "0.2.0"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "deque 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",

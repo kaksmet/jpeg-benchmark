@@ -24,7 +24,7 @@ benchmarks = [
     },
     {
         "name": "jpeg-decoder",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "dir": "jpeg-decoder",
         "compile": "cargo build --release",
         "bin": "target/release/jpeg-decoder",
