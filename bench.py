@@ -29,13 +29,6 @@ benchmarks = [
         "compile": "cargo build --release",
         "bin": "target/release/jpeg-decoder",
     },
-    {
-        "name": "piston-image",
-        "version": "0.6.1",
-        "dir": "piston-image",
-        "compile": "cargo build --release",
-        "bin": "target/release/piston-image",
-    },
 ]
 
 # time.perf_counter requires python 3.3

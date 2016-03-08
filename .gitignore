@@ -2,5 +2,4 @@ go/main
 jpeg-decoder/target
 libjpeg-turbo/build
 libjpeg-turbo/libjpeg*
-piston-image/target
 stb_image/stb_image
