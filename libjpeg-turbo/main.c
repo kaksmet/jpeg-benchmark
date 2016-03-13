@@ -40,7 +40,7 @@ int main(int argc, const char *argv[]) {
         uint8_t *scanline = buffer;
 
         while (info.output_scanline < info.output_height) {
-            int count = jpeg_read_scanlines(&info, (JSAMPARRAY)&scanline, 1);
+            int count = jpeg_read_scanlines(&info, (JSAMPARRAY)&scanline, info.rec_outbuf_height);
             scanline += count * info.output_width * info.output_components;
         }
 
