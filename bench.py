@@ -17,7 +17,7 @@ benchmarks = [
     },
     {
         "name": "stb_image",
-        "version": "2.10",
+        "version": "2.12",
         "dir": "stb_image",
         "compile": "make",
         "bin": "stb_image",
