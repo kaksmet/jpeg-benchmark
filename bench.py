@@ -10,7 +10,7 @@ iterations = 10
 benchmarks = [
     {
         "name": "libjpeg-turbo",
-        "version": "1.4.2",
+        "version": "1.5.0",
         "dir": "libjpeg-turbo",
         "compile": "make",
         "bin": "libjpeg-turbo",
