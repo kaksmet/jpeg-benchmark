@@ -61,6 +61,7 @@ except:
     print("go not found, skipping go benchmark")
     print("")
 
+print("Compiling...")
 for bench in benchmarks:
     name = "{} ({})".format(bench["name"], bench["version"])
 
@@ -70,12 +71,17 @@ for bench in benchmarks:
 
             if exit_code != 0:
                 print("")
-                print("{} failed to compile, skipping".format(name))
+                print("{} failed to compile".format(name))
                 continue
         except OSError as err:
             print("")
             print("{} failed to compile: {}".format(name, err))
             continue
+
+print("Benchmarking...")
+print("")
+for bench in benchmarks:
+    name = "{} ({})".format(bench["name"], bench["version"])
 
     start_time = time.perf_counter()
     exit_code = subprocess.call([os.path.join(bench["dir"], bench["bin"]), image, str(iterations)])
