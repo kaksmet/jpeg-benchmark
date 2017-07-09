@@ -10,21 +10,21 @@ iterations = 25
 benchmarks = [
     {
         "name": "libjpeg-turbo",
-        "version": "1.5.0",
+        "version": "1.5.2",
         "dir": "libjpeg-turbo",
         "compile": "make",
         "bin": "libjpeg-turbo",
     },
     {
         "name": "stb_image",
-        "version": "2.12",
+        "version": "2.15",
         "dir": "stb_image",
         "compile": "make",
         "bin": "stb_image",
     },
     {
         "name": "jpeg-decoder",
-        "version": "0.1.6",
+        "version": "0.1.13",
         "dir": "jpeg-decoder",
         "compile": "cargo build --release",
         "bin": "target/release/jpeg-decoder",
