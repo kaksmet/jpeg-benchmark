@@ -2,30 +2,28 @@ extern crate jpeg_decoder as jpeg;
 
 use std::env;
 use std::fs::File;
-use std::io::{Cursor, Read};
+use std::io::Read;
 use std::path::Path;
 use std::process;
 
 fn read_file<P: AsRef<Path>>(path: P) -> Vec<u8> {
     let mut file = File::open(path).unwrap();
-    let mut buffer = Vec::new();
+    let mut buffer = vec![];
     file.read_to_end(&mut buffer).unwrap();
-
     buffer
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let data = read_file(&args[1]);
-    let iterations = usize::from_str_radix(&args[2], 10).unwrap();
-    let mut failure = false;
+    let data = read_file(env::args().nth(1).unwrap());
+    let iterations = usize::from_str_radix(&env::args().nth(2).unwrap(), 10).unwrap();
+    let mut failed = false;
 
     for _ in 0 .. iterations {
-        let result = jpeg::Decoder::new(Cursor::new(&data)).decode();
-        failure = failure || result.is_err();
+        let result = jpeg::Decoder::new(&data[..]).decode();
+        failed = failed || result.is_err();
     }
 
-    if failure {
+    if failed {
         process::exit(1);
     }
 }
