@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #define STB_IMAGE_IMPLEMENTATION
+#define STBI_ONLY_JPEG
 #include "stb_image.h"
 
 uint8_t *read_file(const char *path, size_t *len) {
