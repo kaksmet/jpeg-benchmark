@@ -1,7 +1,7 @@
 LIBJPEG-TURBO_VERSION=1.5.0
 
 CC=gcc
-CFLAGS=-O3 -msse2
+CFLAGS=-O3 -msse2 -I./libjpeg-turbo-$(LIBJPEG-TURBO_VERSION)
 LDFLAGS=
 
 all: libjpeg-turbo
@@ -12,7 +12,8 @@ libjpeg-turbo: main.c libjpeg.a
 libjpeg.a:
 	curl -fL "https://github.com/libjpeg-turbo/libjpeg-turbo/archive/$(LIBJPEG-TURBO_VERSION).tar.gz" | tar -xz
 	(cd libjpeg-turbo-$(LIBJPEG-TURBO_VERSION) && autoreconf -fiv)
-	(mkdir -p build && cd build && ../libjpeg-turbo-$(LIBJPEG-TURBO_VERSION)/configure --with-jpeg8 && make)
+	(mkdir -p build && cd build && ../libjpeg-turbo-$(LIBJPEG-TURBO_VERSION)/configure && make)
+	cp build/jconfig.h libjpeg-turbo-$(LIBJPEG-TURBO_VERSION)/
 	cp build/.libs/$@ ./
 
 clean:
