@@ -6,7 +6,7 @@ import subprocess
 import sys
 import time
 
-iterations = 10
+iterations = 25
 benchmarks = [
     {
         "name": "libjpeg-turbo",
