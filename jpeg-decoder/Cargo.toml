@@ -10,4 +10,4 @@ name = "jpeg-decoder"
 path = "main.rs"
 
 [dependencies]
-jpeg-decoder = "0.1"
+jpeg-decoder = "0.1.20"

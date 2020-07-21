@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-O3 -msse2
+CFLAGS=-O3
 LDFLAGS=-lm
 
 stb_image: main.c stb_image.h
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)

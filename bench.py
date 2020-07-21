@@ -10,21 +10,21 @@ iterations = 25
 benchmarks = [
     {
         "name": "libjpeg-turbo",
-        "version": "1.5.2",
+        "version": "2.0.5",
         "dir": "libjpeg-turbo",
         "compile": "make",
         "bin": "libjpeg-turbo",
     },
     {
         "name": "stb_image",
-        "version": "2.15",
+        "version": "2.26",
         "dir": "stb_image",
         "compile": "make",
         "bin": "stb_image",
     },
     {
         "name": "jpeg-decoder",
-        "version": "0.1.13",
+        "version": "0.1.20",
         "dir": "jpeg-decoder",
         "compile": "cargo build --release",
         "bin": "target/release/jpeg-decoder",
@@ -84,8 +84,9 @@ for bench in benchmarks:
     name = "{} ({})".format(bench["name"], bench["version"])
 
     start_time = time.perf_counter()
-    exit_code = subprocess.call([os.path.join(bench["dir"], bench["bin"]), image, str(iterations)])
-    time_elapsed = time.perf_counter() - start_time
+    if os.path.isfile(os.path.join(bench["dir"], bench["bin"])) :
+        exit_code = subprocess.call([os.path.join(bench["dir"], bench["bin"]), image, str(iterations)])
+        time_elapsed = time.perf_counter() - start_time
 
-    result = "{:.2f}ms".format((time_elapsed * 1000) / iterations) if exit_code == 0 else "failed"
-    print("{:30} {}".format(name, result))
+        result = "{:.2f}ms".format((time_elapsed * 1000) / iterations) if exit_code == 0 else "failed"
+        print("{:30} {}".format(name, result))
