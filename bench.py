@@ -84,8 +84,9 @@ for bench in benchmarks:
     name = "{} ({})".format(bench["name"], bench["version"])
 
     start_time = time.perf_counter()
-    exit_code = subprocess.call([os.path.join(bench["dir"], bench["bin"]), image, str(iterations)])
-    time_elapsed = time.perf_counter() - start_time
+    if os.path.isfile(os.path.join(bench["dir"], bench["bin"])) :
+        exit_code = subprocess.call([os.path.join(bench["dir"], bench["bin"]), image, str(iterations)])
+        time_elapsed = time.perf_counter() - start_time
 
-    result = "{:.2f}ms".format((time_elapsed * 1000) / iterations) if exit_code == 0 else "failed"
-    print("{:30} {}".format(name, result))
+        result = "{:.2f}ms".format((time_elapsed * 1000) / iterations) if exit_code == 0 else "failed"
+        print("{:30} {}".format(name, result))
